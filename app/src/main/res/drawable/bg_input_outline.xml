@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Warna dasar kolom (Putih) -->
+    <solid android:color="#FFFFFF" />
+
+    <!-- Garis tepi (Biru) -->
+    <stroke
+        android:width="2dp"
+        android:color="#3F6EB6" />
+
+    <!-- Kelengkungan sudut (Makin besar makin bulat) -->
+    <corners android:radius="25dp" />
+</shape>
