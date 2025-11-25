@@ -1,5 +1,6 @@
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.silab_app.InventoryItem
 import com.example.silab_app.R
@@ -12,30 +13,29 @@ class InventoryAdapter(
     inner class InventoryViewHolder(val binding: ItemInventoryBinding)
         : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: InventoryItem) {
-            with(binding) {
-                txtName.text = item.name
-                txtLocation.text = item.location
-                imgItem.setImageResource(item.imageRes)
+        fun bind(item: InventoryItem) = with(binding) {
 
-                // Set status styling
-                txtStatus.text = item.status
-                if (item.status == "Available") {
-                    txtStatus.setBackgroundResource(R.drawable.bg_status_available)
-                } else {
-                    txtStatus.setBackgroundResource(R.drawable.bg_status_unavailable)
-                }
+            txtName.text = item.name
+            txtLocation.text = item.location
+            imgItem.setImageResource(item.imageRes)
 
-                root.setOnClickListener { onClick(item) }
+            // Status badge
+            txtStatus.text = item.status
+            if (item.status == "Available") {
+                txtStatus.setBackgroundResource(R.drawable.bg_status_available)
+                txtStatus.setTextColor(ContextCompat.getColor(root.context, R.color.available))
+            } else {
+                txtStatus.setBackgroundResource(R.drawable.bg_status_unavailable)
+                txtStatus.setTextColor(ContextCompat.getColor(root.context, R.color.not_available))
             }
+
+            root.setOnClickListener { onClick(item) }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InventoryViewHolder {
         val binding = ItemInventoryBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent,
-            false
+            LayoutInflater.from(parent.context), parent, false
         )
         return InventoryViewHolder(binding)
     }
@@ -44,5 +44,6 @@ class InventoryAdapter(
         holder.bind(items[position])
     }
 
-    override fun getItemCount() = items.size
+    override fun getItemCount(): Int = items.size
 }
+
