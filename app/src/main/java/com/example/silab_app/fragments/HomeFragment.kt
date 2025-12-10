@@ -10,6 +10,8 @@ import com.example.silab_app.InventoryItem
 import com.example.silab_app.R
 import com.example.silab_app.databinding.FragmentHomeBinding
 import InventoryAdapter
+import android.content.Intent
+import com.example.silab_app.FormActivity
 
 class HomeFragment : Fragment() {
 
@@ -37,10 +39,18 @@ class HomeFragment : Fragment() {
         )
 
         // --- Setup adapter ---
-        val adapter = InventoryAdapter(data)
+        val adapter = InventoryAdapter(data) { item ->
+            val intent = Intent(requireContext(), FormActivity::class.java)
+            intent.putExtra("name", item.name)
+            intent.putExtra("location", item.location)
+            intent.putExtra("status", item.status)
+            intent.putExtra("image", item.imageRes)
+            startActivity(intent)
+        }
 
         binding.recyclerInventory.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.recyclerInventory.adapter = adapter
+
     }
 
     override fun onDestroyView() {

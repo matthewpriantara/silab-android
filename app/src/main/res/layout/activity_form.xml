@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:fillViewport="true">
-<!--    tools:context=".PeminjamanActivity">-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +13,6 @@
         android:orientation="vertical"
         android:padding="24dp">
 
-        <!-- Header Title: Form Peminjaman -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,7 +22,9 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
+        <!-- ========================== -->
         <!-- Input Nama -->
+        <!-- ========================== -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,15 +45,15 @@
             android:hint="Masukkan nama..."
             android:inputType="textPersonName" />
 
-
-        <!-- Dropdown -->
+        <!-- ========================== -->
+        <!-- Sesi + Tanggal -->
+        <!-- ========================== -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:baselineAligned="false">
 
-            <!-- kolom left -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -69,24 +69,25 @@
                     android:textStyle="bold"
                     android:layout_marginBottom="5dp"/>
 
-                <!-- Spinner (Dropdown) Sesi -->
-                <Spinner
-                    android:id="@+id/spSesi"
+                <EditText
+                    android:id="@+id/txtSesi"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@drawable/bg_input_outline"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
                     android:layout_marginBottom="16dp"
-                    tools:listitem="@android:layout/simple_spinner_item" />
+                    android:hint="Masukkan sesi..."
+                    android:inputType="text" />
             </LinearLayout>
 
-            <!-- Kolom Kanan -->
+            <!-- ========================== -->
+            <!-- Input Tanggal (DatePicker) -->
+            <!-- ========================== -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginEnd="8dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -97,21 +98,24 @@
                     android:textStyle="bold"
                     android:layout_marginBottom="5dp"/>
 
-                <!-- Spinner (Dropdown) Sesi -->
-                <Spinner
-                    android:id="@+id/spTanggal"
+                <EditText
+                    android:id="@+id/txtTanggal"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@drawable/bg_input_outline"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
                     android:layout_marginBottom="16dp"
-                    tools:listitem="@android:layout/simple_spinner_item" />
+                    android:hint="Pilih tanggal..."
+                    android:focusable="false"
+                    android:clickable="true"/>
             </LinearLayout>
 
         </LinearLayout>
 
-        <!-- Input: Mata Kuliah -->
+        <!-- ========================== -->
+        <!-- Input Matkul -->
+        <!-- ========================== -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -132,7 +136,9 @@
             android:hint="Masukkan mata kuliah..."
             android:inputType="textPersonName" />
 
-        <!-- Input: Penanggung Jawab -->
+        <!-- ========================== -->
+        <!-- Input Penanggung Jawab -->
+        <!-- ========================== -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -153,10 +159,9 @@
             android:hint="Masukkan penanggung jawab..."
             android:inputType="textPersonName" />
 
-
-
-
-        <!-- Buttons Row (Batal & Submit) -->
+        <!-- ========================== -->
+        <!-- Buttons -->
+        <!-- ========================== -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -164,28 +169,25 @@
             android:gravity="end"
             android:orientation="horizontal">
 
-            <!-- Button Batal (Putih Garis Biru) -->
             <Button
                 android:id="@+id/btnBatal"
                 android:layout_width="120dp"
                 android:layout_height="45dp"
                 android:layout_marginEnd="16dp"
-
-                android:background="@drawable/bg_input_outline"
-                app:backgroundTint="@null"
-
                 android:text="Batal"
                 android:textAllCaps="false"
+                android:background="@drawable/bg_button_cancel"
+                app:backgroundTint="@null"
                 android:textColor="#154C9E"
                 android:textSize="16sp"
                 android:textStyle="bold" />
+
 
             <Button
                 android:id="@+id/btnSubmit"
                 android:layout_width="120dp"
                 android:layout_height="50dp"
                 app:backgroundTint="#004CB0"
-
                 android:text="Submit"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
