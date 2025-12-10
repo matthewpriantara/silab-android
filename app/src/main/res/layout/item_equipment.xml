@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:gravity="center_horizontal">
+
+        <!-- Equipment Image Placeholder -->
+        <FrameLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_menu_gallery"
+                app:tint="#2196F3" />
+        </FrameLayout>
+
+        <!-- Equipment Name -->
+        <TextView
+            android:id="@+id/tvEquipmentName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Osiloskop Analog GW Instek GOS 620"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:lineSpacingMultiplier="1.2"
+            android:gravity="center" />
+
+        <!-- Lab Name -->
+        <TextView
+            android:id="@+id/tvLabName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Lab RPL"
+            android:textSize="11sp"
+            android:textColor="#808080" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Status Button -->
+        <Button
+            android:id="@+id/btnStatus"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="Done"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2196F3" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
