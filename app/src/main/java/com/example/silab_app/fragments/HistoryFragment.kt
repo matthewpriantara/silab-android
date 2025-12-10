@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.silab_app.InventoryItem
 import com.example.silab_app.R
-import com.example.silab_app.adapters.EquipmentAdapter
-import com.example.silab_app.models.Equipment
+import InventoryAdapter
 
 class HistoryFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: EquipmentAdapter
+    private lateinit var adapter: InventoryAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,16 +26,15 @@ class HistoryFragment : Fragment() {
         recyclerView = view.findViewById(R.id.rvEquipment)
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
-        val equipmentList = listOf(
-            Equipment("Osiloskop Analog GW Instek GOS 620", "Lab RPL", "Done"),
-            Equipment("Osiloskop Analog GW Instek GOS 620", "Lab RPL", "Done"),
-            Equipment("Osiloskop Analog GW Instek GOS 620", "Lab RPL", "Done"),
-            Equipment("Osiloskop Analog GW Instek GOS 620", "Lab RPL", "Done"),
-            Equipment("Osiloskop Analog GW Instek GOS 620", "Lab RPL", "Done"),
-            Equipment("Osiloskop Analog GW Instek GOS 620", "Lab RPL", "Done")
+        // DATA sama seperti Home
+        val data = listOf(
+            InventoryItem("Osiloskop Analog GW Instek GDS 620", "Lab RPL", "Done", R.drawable.osiloscope),
+            InventoryItem("Osiloskop Digital XYZ", "Lab RPL", "Done", R.drawable.osiloscope),
+            InventoryItem("Osiloskop Analog Gizi", "Lab RPL", "Done", R.drawable.osiloscope),
+            InventoryItem("Osiloskop Digital QWERTY", "Lab RPL", "Done", R.drawable.osiloscope)
         )
 
-        adapter = EquipmentAdapter(equipmentList)
+        adapter = InventoryAdapter(data)
         recyclerView.adapter = adapter
 
         return view

@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="available">#007F7C</color>
     <color name="not_available">#F73939</color>
+    <color name="done">#004CB0</color>
+    <color name="rejected">#C70000</color>
 </resources>

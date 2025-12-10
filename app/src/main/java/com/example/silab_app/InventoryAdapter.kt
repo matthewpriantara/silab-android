@@ -24,9 +24,12 @@ class InventoryAdapter(
             if (item.status == "Available") {
                 txtStatus.setBackgroundResource(R.drawable.bg_status_available)
                 txtStatus.setTextColor(ContextCompat.getColor(root.context, R.color.available))
-            } else {
+            } else if (item.status == "Not Available"){
                 txtStatus.setBackgroundResource(R.drawable.bg_status_unavailable)
                 txtStatus.setTextColor(ContextCompat.getColor(root.context, R.color.not_available))
+            } else {
+                txtStatus.setBackgroundResource(R.drawable.bg_status_done)
+                txtStatus.setTextColor(ContextCompat.getColor(root.context, R.color.done))
             }
 
             root.setOnClickListener { onClick(item) }
