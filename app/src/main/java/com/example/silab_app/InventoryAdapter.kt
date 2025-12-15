@@ -1,8 +1,10 @@
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.silab_app.InventoryItem
+import coil.load
+import com.example.silab_app.models.InventoryItem
 import com.example.silab_app.R
 import com.example.silab_app.databinding.ItemInventoryBinding
 class InventoryAdapter(
@@ -17,7 +19,14 @@ class InventoryAdapter(
 
             txtName.text = item.name
             txtLocation.text = item.location
-            imgItem.setImageResource(item.imageRes)
+
+
+
+            if (!item.imgRes.isNullOrEmpty()) {
+                imgItem.load(item.imgRes)
+            } else {
+                imgItem.setImageResource(R.drawable.default_img)
+            }
 
             // Status badge
             txtStatus.text = item.status

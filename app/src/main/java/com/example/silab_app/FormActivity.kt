@@ -21,6 +21,8 @@ class FormActivity : AppCompatActivity() {
         val location = intent.getStringExtra("location")
         val status = intent.getStringExtra("status")
         val imageRes = intent.getIntExtra("image", 0)
+        val id = intent.getIntExtra("id", -1)
+        Toast.makeText(this@FormActivity, "Id item yg diklik ${id}", Toast.LENGTH_SHORT)
 
         Log.d("FormActivity", "Name: $name")
         Log.d("FormActivity", "Location: $location")
