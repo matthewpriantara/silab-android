@@ -15,14 +15,17 @@ class SessionManager(context: Context) {
         private const val KEY_NIM = "nim"
         private const val KEY_EMAIL = "email"
         private const val KEY_PRODI = "prodi"
+
+        private const val KEY_TOKEN = "token"
     }
 
-    fun saveLoginSession(nama: String, nim: String, email: String, prodi: String) {
+    fun saveLoginSession(nama: String, nim: String, email: String, prodi: String, token: String) {
         editor.putBoolean(KEY_IS_LOGGED_IN, true)
         editor.putString(KEY_NAMA, nama)
         editor.putString(KEY_NIM, nim)
         editor.putString(KEY_EMAIL, email)
         editor.putString(KEY_PRODI, prodi)
+        editor.putString(KEY_TOKEN, token)
         editor.apply()
     }
 
@@ -46,6 +49,9 @@ class SessionManager(context: Context) {
         return prefs.getString(KEY_PRODI, "") ?: ""
     }
 
+    fun getToken(): String {
+        return prefs.getString(KEY_TOKEN, "") ?: ""
+    }
     fun logout() {
         editor.clear()
         editor.apply()
