@@ -81,6 +81,7 @@ class HomeFragment : Fragment() {
             Log.d("FRAGMENT", "Jumlah data: ${data.size}")
             inventoryList.clear()
             inventoryList.addAll(data)
+            Log.d("Data", inventoryList.toString())
             adapter.notifyDataSetChanged()
         }
 

@@ -20,8 +20,6 @@ class InventoryAdapter(
             txtName.text = item.name
             txtLocation.text = item.location
 
-
-
             if (!item.imgRes.isNullOrEmpty()) {
                 imgItem.load(item.imgRes)
             } else {
@@ -36,6 +34,21 @@ class InventoryAdapter(
             } else if (item.status == "Not Available"){
                 txtStatus.setBackgroundResource(R.drawable.bg_status_unavailable)
                 txtStatus.setTextColor(ContextCompat.getColor(root.context, R.color.not_available))
+            } else if (item.status == "process") {
+                txtStatus.setBackgroundResource(R.drawable.bg_status_process)
+                txtStatus.setTextColor(ContextCompat.getColor(root.context, R.color.process))
+            } else if (item.status == "canceled") {
+                txtStatus.setBackgroundResource(R.drawable.bg_status_canceled)
+                txtStatus.setTextColor(ContextCompat.getColor(root.context, R.color.canceled))
+            } else if (item.status == "waiting_to_be_return") {
+                txtStatus.setBackgroundResource(R.drawable.bg_status_waiting)
+                txtStatus.setTextColor(ContextCompat.getColor(root.context, R.color.waiting_to_be_return))
+            } else if (item.status == "approve") {
+                txtStatus.setBackgroundResource(R.drawable.bg_status_approve)
+                txtStatus.setTextColor(ContextCompat.getColor(root.context, R.color.approve))
+            } else if (item.status == "rejected") {
+                txtStatus.setBackgroundResource(R.drawable.bg_status_rejected)
+                txtStatus.setTextColor(ContextCompat.getColor(root.context, R.color.rejected))
             } else {
                 txtStatus.setBackgroundResource(R.drawable.bg_status_done)
                 txtStatus.setTextColor(ContextCompat.getColor(root.context, R.color.done))
