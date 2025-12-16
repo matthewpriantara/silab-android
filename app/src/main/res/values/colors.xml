@@ -6,4 +6,8 @@
     <color name="not_available">#F73939</color>
     <color name="done">#004CB0</color>
     <color name="rejected">#C70000</color>
+    <color name="approve">#1F8E00</color>
+    <color name="process">#817D24</color>
+    <color name="canceled">#444444</color>
+    <color name="waiting_to_be_return">#5D00AE</color>
 </resources>

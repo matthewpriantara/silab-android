@@ -2,16 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/outline_chess_pawn_24"
+        android:icon="@drawable/hom"
         android:title="Home" />
 
     <item
         android:id="@+id/nav_history"
-        android:icon="@drawable/outline_chess_pawn_24"
+        android:icon="@drawable/hisss"
         android:title="History" />
 
     <item
         android:id="@+id/nav_profile"
-        android:icon="@drawable/outline_chess_pawn_24"
+        android:icon="@drawable/aku"
         android:title="Profile" />
 </menu>

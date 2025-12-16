@@ -5,22 +5,28 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.silab_app.models.InventoryItem
 
-class HomeViewModel(
-    private val repository: InventoryRepository
-): ViewModel() {
+class HistoryViewModel(
+    private val repository: HistoryRepository
+) : ViewModel() {
+
     private val _inventories = MutableLiveData<List<InventoryItem>>()
     val inventories: LiveData<List<InventoryItem>> = _inventories
+
     private val _errMessage = MutableLiveData<String>()
     val errMessage: LiveData<String> = _errMessage
 
     fun fetchInventories() {
-        repository.getInventoriesData(
-            {data ->
-            _inventories.postValue(data)
+        repository.getHistoryData(
+            onSuccess = { list ->
+                val historyItems = list.filter {
+                    it.status != "Available" &&
+                            it.status != "Not Available"
+                }
+
+                _inventories.postValue(historyItems)
             },
-            {
-                data ->
-                _errMessage.postValue(data)
+            onError = { msg ->
+                _errMessage.postValue(msg)
             }
         )
     }

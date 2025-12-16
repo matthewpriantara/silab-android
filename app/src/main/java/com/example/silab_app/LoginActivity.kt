@@ -2,6 +2,7 @@ package com.example.silab_app
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -116,6 +117,7 @@ class LoginActivity : AppCompatActivity() {
                 p0: Call<LoginResponse>,
                 p1: Throwable
             ) {
+                Log.d("ERROR", p1.message?: "Waduh gatau dh")
                 Toast.makeText(this@LoginActivity, "Gagal ${p1.message}", Toast.LENGTH_SHORT).show()
             }
 
