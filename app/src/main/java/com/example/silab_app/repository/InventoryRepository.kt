@@ -22,9 +22,6 @@ class InventoryRepository(
             ) {
                 if(!p1.isSuccessful) {
                     onError(p1.message())
-//                    Toast.makeText(requireContext(),
-//                        "Gagal mendapatkan data: HTTP ${p1.message()}",
-//                        Toast.LENGTH_SHORT).show()
                     return
                 }
                 val response = p1.body()!!.data
