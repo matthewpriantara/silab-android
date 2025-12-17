@@ -14,7 +14,7 @@ data class CreateReserves(
     val subject_id: Int,
 
     @SerializedName("tanggal")
-    val tanggal: Date,
+    val tanggal: String,
 
     @SerializedName("session_id")
     val session_id: Int

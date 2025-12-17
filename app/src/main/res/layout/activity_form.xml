@@ -38,6 +38,9 @@
             android:id="@+id/txtNama"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:background="@drawable/bg_input_outline"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
@@ -69,8 +72,8 @@
                     android:textStyle="bold"
                     android:layout_marginBottom="5dp"/>
 
-                <EditText
-                    android:id="@+id/txtSesi"
+                <Spinner
+                    android:id="@+id/spinnerSesi"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@drawable/bg_input_outline"
@@ -125,8 +128,8 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"/>
 
-        <EditText
-            android:id="@+id/txtMatkul"
+        <Spinner
+            android:id="@+id/spinnerSubject"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/bg_input_outline"

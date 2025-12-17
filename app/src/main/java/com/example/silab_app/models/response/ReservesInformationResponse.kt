@@ -8,5 +8,5 @@ data class ReservesInformationResponse(
     val message: String,
 
     @SerializedName("data")
-    val data: List<ReserveInformation>
+    val data: ReserveInformation
 )
